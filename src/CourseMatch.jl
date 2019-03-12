@@ -2,7 +2,7 @@ module CourseMatch
 
 	VERSION = VersionNumber(0,0,2)
 
-using JuMP, Gurobi, CSV, DataFrames, SparseArrays, Dates
+using JuMP, Cbc, CSV, DataFrames, SparseArrays, Dates
 using DataStructures, Distributions, DataFramesMeta
 
 

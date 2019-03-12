@@ -114,7 +114,7 @@ function demand!(price::Vector{Float64}, s::Student; p_neigh_parm::Int64=0)
 	N = size(s.preferences)[1]  # number of choices
 
 	# Maximization problem
-	m = Model(solver=GurobiSolver())
+	m = Model(solver=CbcSolver())
 
 	@variable(m, x[1:N], Bin)
 
