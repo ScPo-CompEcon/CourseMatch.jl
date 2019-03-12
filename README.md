@@ -1,9 +1,8 @@
 # CourseMatch
 
-[![Build Status](https://travis-ci.com/floswald/CourseMatch.jl.svg?branch=master)](https://travis-ci.com/floswald/CourseMatch.jl)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/floswald/CourseMatch.jl?svg=true)](https://ci.appveyor.com/project/floswald/CourseMatch-jl)
-[![Codecov](https://codecov.io/gh/floswald/CourseMatch.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/floswald/CourseMatch.jl)
-
+[![Build Status](https://travis-ci.com/ScPo-CompEcon/CourseMatch.jl.svg?branch=master)](https://travis-ci.com/ScPo-CompEcon/CourseMatch.jl)
+[![Build status](https://ci.appveyor.com/api/projects/status/9kfw5ccti7i1u6ey?svg=true)](https://ci.appveyor.com/project/FlorianOswald/coursematch-jl)
+[![codecov](https://codecov.io/gh/ScPo-CompEcon/CourseMatch.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/ScPo-CompEcon/CourseMatch.jl)
 
 This is the repo for the `CourseMatch` term project of our course.
 
