@@ -27,6 +27,7 @@ So:
 1. step one should be for everyone to **fork** this repo to your github account. This will create a new repo on your account at `https://github.com/YOUR_GITHUB_USER/CourseMatch.jl.git`. Notice that you have to replace `YOUR_GITHUB_USER` with your github username
 1. step two should be for everyone to get the code from their fork into their computer to start developing it. type `]` to activate your package manager. then:
     ```julia
+    # you typed ]
     dev https://github.com/YOUR_GITHUB_USER/CourseMatch.jl.git   
     ```
     This will clone this repository to your computer at location `~/.julia/dev/CourseMatch`. Remember that your `~/.julia` can be seen by typing `DEPOT_PATH[1]` into your REPL.
@@ -50,14 +51,30 @@ So:
 3. Once you are happy with your work, create a new git *branch* in the `~/.julia/dev/CourseMatch` folder. This is a live git repo.
 4. For example
     ```bash
+    # you have made changes to the code in your text editor.
     cd ~/.julia/dev/CourseMatch
-    git branch my_new_feature
-    git checkout my_new_feature
+    git branch my_new_feature     # create a new branch
+    git checkout my_new_feature   # checkout this branch
     git add .    # this would add everything in current dir to your commit. alternatively give file names/paths
-    git commit -m 'I added a new feature'  # message
+    git commit -m 'I added a new feature'  # commit to your branch
     git push origin my_new_feature   # push your work to your fork on github
     ```
-5. Finally, go to your fork at `https://github.com/YOUR_GITHUB_USER/CourseMatch.jl` and click on "new pull request" to create a new PR on the origin repo. 
+5. Finally, go to your fork at `https://github.com/YOUR_GITHUB_USER/CourseMatch.jl` and click on "new pull request" to create a new pull request (PR) on the origin repo. This PR will contain the changes from your branch `my_new_feature`
+
+## How to Update your Fork with Current `Master`?
+
+* You should make your contributions *always* on top of the most recent master branch.
+* You want to *syncronize* your fork with what is going on *upstream*, i.e. the original master branch.
+* Here is how to set this up.
+* You will place your new stuff on top of the most recent `master` branch version on a repo we'll call *upstream*:
+    1. add the `upstream` repo as a remote: `git remote add upstream git@github.com:ScPo-CompEcon/CourseMatch.jl.git`
+    1. Use the `rebase` command
+    ```
+    git checkout master  # make sure you are on your fork's master branch
+    git fetch upstream   # get stuff from `upstream`
+    git rebase upstream/master  # merge upstream master and put your local commits on top of it
+    ```
+    1. Then continue as above in point 4. i.e. make your changes, create a new branch, and push that to your fork.
 
 ## Style Guide
 
