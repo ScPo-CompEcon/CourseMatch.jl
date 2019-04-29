@@ -9,6 +9,7 @@ using DataStructures, Distributions, DataFramesMeta
 # includes
 include("student.jl")
 include("demand.jl")
+include("clearing.jl")
 
 # exports
 
