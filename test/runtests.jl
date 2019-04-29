@@ -2,7 +2,7 @@ using CourseMatch
 using Test
 
 @testset "create students" begin
-    
+
 	k = 3
 	n = 1
 	stds = CourseMatch.make_students(3,n = n)  # k courses, 1 student
@@ -10,6 +10,18 @@ using Test
 	@test stds[1].allocation == zeros(Int,k)
 
 
+end
+
+@testset "clearing errors" begin
+	x = [1 0 1;
+	     1 0 1;
+	     1 0 1;
+	     0 0 1;
+	     1 1 0;
+	     1 1 1]
+	q = [4; 3; 3]
+	p = [30; 0; 50]
+	@test z(x,q,p) == sqrt(5)
 end
 
 
@@ -66,7 +78,7 @@ end
 	 #    @test solution[:course_demand] == [0 1 1]
 	 #    @test solution[:total] == 2
  	# end
- 
+
   #   @testset "substitutable classes" begin
   #   	#Here I have one student, 3 available classes, and it is required to enroll in two classes in total. The student as a stric ordering on the three classes
   #   	#but they have a strong preference over not taking their two most preferred ones together such that they prefer o take their preferred one
@@ -94,4 +106,3 @@ end
 	 #    # @test solution[:total] == 2*solution[:ind_demands][2]
  	# end
 # end
-
