@@ -97,19 +97,19 @@ end
 """
 # constraints 
 
-`C` is the number of courses.
+`ncon` is the number of courses.
 
-* `clash`: a sparse matrix C x C that flags with 1 if the ith element HAS a clash with jth element. 0 otherwise.
-* `mandatory`: a vector C x 1. the i-th element is 1 if the course must be taken, 0 otherwise
-* `notTCprogram`: a vector C x 1. the i-th element is 1 if the course is NOT in the TC of the students's program
-* `notTCsemester`: a vector C x 1. the i-th element is 1 if the course is NOT in the TC of the students's semester
-* `isTC`: a vector C x 1. the i-th element is 1 if the course IS in the TC of the students
-* `notFCprogram`: a vector C x 1. the i-th element is 1 if the course is NOT in the FC of the students's program
-* `notFCsemester`: a vector C x 1. the i-th element is 1 if the course is NOT in the FC of the students's semester
-* `isFC`: a vector C x 1. the i-th element is 1 if the course IS in the FC of the students
-* `notELprogram`: a vector C x 1. the i-th element is 1 if the course is NOT in the EL (electives) of the students's program
-* `notELsemester`: a vector C x 1. the i-th element is 1 if the course is NOT in the EL of the students's semester
-* `isEL`: a vector C x 1. the i-th element is 1 if the course IS in the EL of the students
+* `clash`: a sparse matrix ncon x ncon that flags with 1 if the ith element HAS a clash with jth element. 0 otherwise.
+* `mandatory`: a vector ncon x 1. the i-th element is 1 if the course must be taken, 0 otherwise
+* `notTCprogram`: a vector ncon x 1. the i-th element is 1 if the course is NOT in the TC of the students's program
+* `notTCsemester`: a vector ncon x 1. the i-th element is 1 if the course is NOT in the TC of the students's semester
+* `isTC`: a vector ncon x 1. the i-th element is 1 if the course IS in the TC of the students
+* `notFCprogram`: a vector ncon x 1. the i-th element is 1 if the course is NOT in the FC of the students's program
+* `notFCsemester`: a vector ncon x 1. the i-th element is 1 if the course is NOT in the FC of the students's semester
+* `isFC`: a vector ncon x 1. the i-th element is 1 if the course IS in the FC of the students
+* `notELprogram`: a vector ncon x 1. the i-th element is 1 if the course is NOT in the EL (electives) of the students's program
+* `notELsemester`: a vector ncon x 1. the i-th element is 1 if the course is NOT in the EL of the students's semester
+* `isEL`: a vector ncon x 1. the i-th element is 1 if the course IS in the EL of the students
 
 """
 mutable struct Constraints
@@ -166,8 +166,8 @@ end
 
 ## Fields
 
-- `price` : a column vector of dimension C x 1, which i-th element is the price that was assigned to class i.
-- `preferences` : an array containing S elements, and such that its n-th element is the (sparse) matrix representing student n preferences. Each of the matrices contained in that array should be a squared matrix of dimension C.
+- `price` : a column vector of dimension ncon x 1, which i-th element is the price that was assigned to class i.
+- `preferences` : an array containing S elements, and such that its n-th element is the (sparse) matrix representing student n preferences. Each of the matrices contained in that array should be a squared matrix of dimension ncon.
 - `budget` : a column vector of dimension N x 1, which n-th element is the budget that was allocated to the n-th student.
 - `constraints`: an instance of a [`Constraints`](@ref)
 - `req_TC` : number of TC courses that the student is required to take
